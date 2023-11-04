@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,18 +18,19 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../static/style.css" />
+
     <title>BOCH Restaurant</title>
   </head>
-  <body>
+  <body class="d-flex flex-column h-100 main-bg">
     <!-- Header to contain our logo and navigation -->
     <header class="head">
-      <a href="index.html">
+      <a href="">
         <h1 id="logo">BOCH Restaurant</h1>
       </a>
       <nav id="menu">
-        <ul class=>
+        <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="">Home</a>
           </li>
           <li>
             <a href="#">Menu</a>
@@ -36,7 +39,7 @@
             <a href="#">About Us</a>
           </li>
           <li>
-            <a href="#">Reservation</a>
+            <a href="reservation/">Reservation</a>
           </li>
           <li>
             <a href="#">Logout</a>
@@ -44,7 +47,8 @@
         </ul>
       </nav>
     </header>
-    <section>
+    <!-- <section>
+
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -63,11 +67,15 @@
             <span class="sr-only">Next</span>
         </button>
     </div>
-    </section>
-    <hr />
+    </section> -->
+    <main class="flex-shrink-0 main-bg">
+      {% block content %}
+      <!-- Content Goes here -->
+      {% endblock content %}
+    </main>
     <!-- Create footer with seperate divs for different categories of information-->
     <div>
-      <footer>
+      <footer class="fixed-bottom">
         <div class="container">
           <div class="row">
             <div class="col">
@@ -77,12 +85,12 @@
             </div>
             <div class="col">
               <h3>Open Hours</h3>
-              <p>Mo - Fri: 09:00 - 22:00</p>
+              <p>Mo-Fri: 09:00 - 22:00</p>
               <p>Sat: 08:00 - 22:00</p>
               <p>Sun: 08:00 - 18:00</p>
             </div>
             <div class="col">
-              <h3>Adress</h3>
+              <h3>Address</h3>
               <p>Mayener Strasse 130</p>
               <p>56070 Koblenz, Germany</p>
             </div>

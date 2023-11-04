@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="container">
+  {% for reservation in object_list %}
+
+  <p>{{ reservation }}</p>
+
+  {% endfor %}
+</div>
+
+{% endblock %}
