@@ -45,6 +45,13 @@ def edit(request, reservation_id):
     }
     return render(request, "../templates/edit_reservation.html", context)
 
+
+def delete(request, reservation_id):
+    reserved = get_object_or_404(Reservation, id=reservation_id)
+    reserved.delete()
+    return redirect('reservation')
+
+
 # def ReservationForm(request):
 
 #     context = {}
