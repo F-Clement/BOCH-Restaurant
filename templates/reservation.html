@@ -2,10 +2,30 @@
 
 <div class="container">
   {% for reservation in object_list %}
-
-  <p>{{ reservation }}</p>
-
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Number of People</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Manage Reservation</th>
+    </tr>
+    <tr>
+      <td>{{ reservation.name }}</td>
+      <td>{{reservation.email}}</td>
+      <td>{{reservation.phone}}</td>
+      <td>{{reservation.no_of_people}}</td>
+      <td>{{reservation.time}}</td>
+      <td>
+        <a href="/edit/{{ reservation.id}}"> Edit</a> |
+        <a href="/delete/{{ reservation.id}}">Delete</a>
+      </td>
+    </tr>
+  </table>
   {% endfor %}
+  <a href="/add_reservation">Make Reservation</a>
 </div>
 
 {% endblock %}

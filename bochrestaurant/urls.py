@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('reservation/', include('restaurant.urls'), name='restaurant_urls'),
     path('', views.index, name='index'),
+    path('add_reservation/', views.add, name='add_reservation'),
+    path('edit/<reservation_id>', views.edit, name='edit_reservation')
+
 
 ]

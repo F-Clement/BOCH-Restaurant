@@ -13,4 +13,4 @@ class Reservation(models.Model):
     time = models.TimeField()
 
     def __str__(self):
-        return self.name + self.email + str(self.phone) + str(self.time) + str(self.date)
+        return self.name
