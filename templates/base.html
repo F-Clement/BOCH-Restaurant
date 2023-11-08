@@ -29,20 +29,29 @@
       </a>
       <nav id="menu">
         <ul>
+          {% if user.is_authenticated %}
           <li>
-            <a href="">Home</a>
+            <a href="{% url 'account_logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'account_login' %}">Login</a>
           </li>
           <li>
-            <a href="#">Menu</a>
+            <a href="{% url 'account_signup' %}">Register</a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="{% url 'reservation' %}">Reservation</a>
           </li>
           <li>
             <a href="#">About Us</a>
           </li>
           <li>
-            <a href="{% url 'reservation' %}">Reservation</a>
+            <a href="#">Menu</a>
           </li>
           <li>
-            <a href="#">Logout</a>
+            <a href="/">Home</a>
           </li>
         </ul>
       </nav>
